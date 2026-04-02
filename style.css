@@ -157,10 +157,16 @@ section {
 
 /* --- INFO GRID (Horario y Mapa) --- */
 .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     align-items: start;
+    width: 100%;
+}
+
+.horario, .mapa {
+    flex: 1 1 400px; /* Base de 400px, si no hay espacio saltan a otra línea */
+    min-width: 0; 
 }
 
 .horario ul {
@@ -176,33 +182,61 @@ section {
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .horario li span {
     font-weight: bold;
     color: #bb5432;
+    flex-shrink: 0; /* Evita que el nombre del día se encoja */
 }
 
 .mapa iframe {
-    width: 100% !important; /* Fuerza el mapa al ancho total */
+    width: 100% !important;
+    max-width: 100% !important;
     height: 300px;
     border-radius: 10px;
     display: block;
+    border: 0;
 }
 
 /* --- RESPONSIVE AJUSTES --- */
 @media (max-width: 768px) {
     .info-grid {
-        grid-template-columns: 1fr; /* Horario y Mapa uno debajo del otro */
+        flex-direction: column;
         gap: 30px;
     }
-    
+
+    .horario, .mapa {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* Evitamos que el texto largo del horario empuje la pantalla */
+    .horario li {
+        flex-direction: row; 
+        font-size: 0.9rem;
+    }
+
     h2 {
-        font-size: 1.8rem; /* Títulos un poco más pequeños en móvil */
+        font-size: 1.8rem;
     }
 
     .intro p {
         font-size: 1.1rem;
+    }
+}
+
+/* Para móviles muy pequeños (iPhone SE, etc.) */
+@media (max-width: 380px) {
+    .horario li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .horario ul {
+        padding: 15px;
     }
 }
 
