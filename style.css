@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* --- SEGURIDAD ANTI-SCROLL LATERAL --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Esto corta cualquier cosa que se salga por los lados */
+    position: relative;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
