@@ -37,9 +37,9 @@ h2 {
     font-size: 2.2rem;
 }
 
-/* --- CABECERA --- */
+/* --- CABECERA --- color antiguo #bb5432  */
 .main-header {
-    background-color: #bb5432; 
+    background-color: #B0593B;
     height: 150px; 
     width: 100%; 
     display: flex;
