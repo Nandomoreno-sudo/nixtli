@@ -201,6 +201,76 @@ section {
     border: 0;
 }
 
+/* --- ESTILOS DEL LIGHTBOX (MODAL) --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoom 0.3s;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #f7eed7;
+    padding: 10px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #bb5432; /* Color de tu marca al pasar el mouse */
+}
+
+/* Animación de entrada */
+@keyframes zoom {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+    }
+    .close-modal {
+        top: 10px;
+        right: 20px;
+    }
+}
+
 /* --- RESPONSIVE AJUSTES --- */
 @media (max-width: 768px) {
     .info-grid {
