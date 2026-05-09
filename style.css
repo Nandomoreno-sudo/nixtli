@@ -297,6 +297,59 @@ section {
         font-size: 1.1rem;
     }
 }
+/* --- SECCIÓN RESERVAS --- */
+.reservas-cta {
+    background-color: #f7eed7; /* Crema suave como tu slogan-bar */
+    padding: 40px 0;
+    text-align: center;
+    border-top: 2px dashed #bb5432;
+    border-bottom: 2px dashed #bb5432;
+    margin: 40px 0;
+}
+
+.reservas-box h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #800000;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.reservas-box p {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn-telefono {
+    display: inline-block;
+    background-color: #1a472a; /* Verde Bandera */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-telefono:hover {
+    background-color: #bb5432; /* Cambia a naranja al pasar el ratón */
+    transform: scale(1.05);
+    color: white;
+}
+
+.btn-telefono .icon {
+    margin-right: 10px;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .reservas-box h3 { font-size: 1.5rem; }
+    .btn-telefono { font-size: 1.2rem; width: 90%; }
+}
 
 /* Para móviles muy pequeños (iPhone SE, etc.) */
 @media (max-width: 380px) {
