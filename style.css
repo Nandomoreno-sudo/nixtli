@@ -350,7 +350,36 @@ section {
     .reservas-box h3 { font-size: 1.5rem; }
     .btn-telefono { font-size: 1.2rem; width: 90%; }
 }
+/* --- MEJORA DE HORARIO RESPONSIVE --- */
+@media (max-width: 768px) {
+    .horario ul {
+        padding: 15px; /* Menos relleno lateral para ganar espacio */
+    }
 
+    .horario li {
+        flex-direction: column; /* El día arriba, la hora abajo */
+        align-items: flex-start; /* Alineado a la izquierda */
+        padding: 15px 0;
+        gap: 5px;
+    }
+
+    .horario li span {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #800000; /* Un tono más fuerte para el día */
+    }
+
+    /* Estilo específico para las horas */
+    .horario li div.horas-container {
+        color: #444;
+        font-weight: 500;
+        font-size: 1rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Por si la hora es muy larga, que baje sola */
+    }
+}
 /* Para móviles muy pequeños (iPhone SE, etc.) */
 @media (max-width: 380px) {
     .horario li {
