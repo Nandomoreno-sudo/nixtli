@@ -100,6 +100,47 @@
             <p>© 2026 NIXTLI - Sabor de México</p>
         </div>
     </footer>
+    <!-- Modal para ver imagen en grande -->
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull">
+    <div id="caption"></div>
+</div>
 
+<!-- Modal para ver imagen en grande -->
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull">
+    <div id="caption"></div>
+</div>
+
+<script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgFull");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+    // Seleccionamos todas las imágenes dentro de las tarjetas
+    document.querySelectorAll('.photo-item img').forEach(img => {
+        img.style.cursor = "pointer"; // Cambia el cursor para indicar que es clicable
+        img.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Cerrar al hacer clic en la (X)
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cerrar al hacer clic fuera de la imagen
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
